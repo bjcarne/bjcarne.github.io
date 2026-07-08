@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Camp Cost Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Church Camp Cost Calculator</h1>
+        <p class="subtitle">Calculate the total cost for your camp registration</p>
+        
+        <form id="campForm">
+            <div class="section">
+                <h2>Attendee Information</h2>
+                
+                <div class="form-group">
+                    <label for="adults">Number of Adults (19+):</label>
+                    <input type="number" id="adults" min="0" value="0">
+                    <span class="price">$180 per person</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="youth12-18">Number of Youth (12-18 years):</label>
+                    <input type="number" id="youth12-18" min="0" value="0">
+                    <span class="price">$150 per person</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="children6-11">Number of Children (6-11 years):</label>
+                    <input type="number" id="children6-11" min="0" value="0">
+                    <span class="price">$130 per person</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="children3-5">Number of Children (3-5 years):</label>
+                    <input type="number" id="children3-5" min="0" value="0">
+                    <span class="price">$80 per person</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="children0-2">Number of Children (0-2 years):</label>
+                    <input type="number" id="children0-2" min="0" value="0">
+                    <span class="price">Free</span>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Family Discount (Automatic)</h2>
+                
+                <div class="info-box">
+                    <ul>
+                        <li>Adults and oldest child: Full price</li>
+                        <li>Second child: 50% off</li>
+                        <li>Third child: 67% off</li>
+                        <li>Fourth and subsequent children: Free</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <button type="button" id="calculateBtn" onclick="calculateTotal()">Calculate Total</button>
+        </form>
+        
+        <div id="result" class="result">
+            <h2>Cost Breakdown</h2>
+            <div id="breakdown"></div>
+            <div class="total">
+                <strong>Total Cost: <span id="totalCost">$0.00</span></strong>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2026 Church Camp Cost Calculator</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
